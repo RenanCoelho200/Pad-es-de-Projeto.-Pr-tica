@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    from abc import ABC, abstractmethod
+from item_cardapio import ItemCardapio, PratoPrincipal, Sobremesa, Bebida
+
+class CriadorDeItem(ABC):
+    @abstractmethod
+    def criarItem(self, nome: str, preco: float) -> ItemCardapio:
+        pass
+
+class CriadorDePratoPrincipal(CriadorDeItem):
+    def criarItem(self, nome: str, preco: float) -> ItemCardapio:
+        return PratoPrincipal(nome, preco)
+
+class CriadorDeSobremesa(CriadorDeItem):
+    def criarItem(self, nome: str, preco: float) -> ItemCardapio:
+        return Sobremesa(nome, preco)
+
+class CriadorDeBebida(CriadorDeItem):
+    def criarItem(self, nome: str, preco: float) -> ItemCardapio:
+        return Bebida(nome, preco)
+
+</body>
+</html>

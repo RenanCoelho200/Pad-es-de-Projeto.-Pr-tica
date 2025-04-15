@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    from criadores import CriadorDePratoPrincipal, CriadorDeSobremesa, CriadorDeBebida
+from pedido import Pedido
+
+if __name__ == "__main__":
+    # Criadores
+    fabrica_prato = CriadorDePratoPrincipal()
+    fabrica_sobremesa = CriadorDeSobremesa()
+    fabrica_bebida = CriadorDeBebida()
+
+    # Criar itens
+    prato = fabrica_prato.criarItem("Feijoada", 35.90)
+    sobremesa = fabrica_sobremesa.criarItem("Mousse de Maracujá", 10.00)
+    bebida = fabrica_bebida.criarItem("Suco de Laranja", 7.50)
+
+    # Criar pedido
+    pedido = Pedido()
+    pedido.adicionarItem(prato)
+    pedido.adicionarItem(sobremesa)
+    pedido.resumirPedido()
+
+    print("\nAdicionando bebida ao pedido...\n")
+    pedido.adicionarItem(bebida)
+    pedido.resumirPedido()
+
+</body>
+</html>

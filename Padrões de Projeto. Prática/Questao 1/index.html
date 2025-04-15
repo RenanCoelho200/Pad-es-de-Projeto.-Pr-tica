@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    from abc import ABC, abstractmethod
+
+class ItemCardapio(ABC):
+    def __init__(self, nome: str, preco: float):
+        self.nome = nome
+        self.preco = preco
+
+    @abstractmethod
+    def preparar(self):
+        pass
+
+class PratoPrincipal(ItemCardapio):
+    def preparar(self):
+        return f"Preparando o prato principal: {self.nome}."
+
+class Sobremesa(ItemCardapio):
+    def preparar(self):
+        return f"Preparando a sobremesa: {self.nome}."
+
+class Bebida(ItemCardapio):
+    def preparar(self):
+        return f"Preparando a bebida: {self.nome}."
+
+</body>
+</html>

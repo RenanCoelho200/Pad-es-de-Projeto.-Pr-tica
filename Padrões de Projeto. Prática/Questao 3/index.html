@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    from item_cardapio import ItemCardapio
+
+class Pedido:
+    def __init__(self):
+        self.itens = []
+
+    def adicionarItem(self, item: ItemCardapio):
+        self.itens.append(item)
+
+    def resumirPedido(self):
+        print("Resumo do Pedido:")
+        for item in self.itens:
+            print(f"- Nome: {item.nome}")
+            print(f"  Preço: R$ {item.preco:.2f}")
+            print(f"  {item.preparar()}")
+
+</body>
+</html>
